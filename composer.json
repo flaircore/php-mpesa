@@ -1,0 +1,22 @@
+{
+    "name": "flaircore/mpesa",
+    "description": "Contains a php library that helps php developer intergrate their app(s) with safaricom mpesa (Daraja) api",
+    "type": "library",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Nicholas Babu",
+            "email": "nijoba33@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Flaircore\\Mpesa\\": "src/"
+        }
+    }
+}
