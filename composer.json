@@ -1,5 +1,5 @@
 {
-    "name": "flaircore/mpesa",
+    "name": "flaircore/php-mpesa",
     "description": "Contains a php library that helps php developer intergrate their app(s) with safaricom mpesa (Daraja) api",
     "type": "library",
     "license": "GPL-2.0",
