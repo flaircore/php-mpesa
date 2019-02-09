@@ -40,8 +40,8 @@ Make sure you have composer installed, then in the root of your project director
         $mpesaRequest->mpesaSTKPush();#send the request
         
 **PREREQUISITES**
-PHP 7.1 or above
-curl and json ext must be enabled
+PHP 7.1 or above, also
+curl and json ext must be enabled.
 
 **Contributing**
 Seeking co-contributers to make this library whole and better
