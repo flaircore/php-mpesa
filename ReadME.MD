@@ -8,6 +8,8 @@ Make sure you have composer installed, then in the root of your project director
 `composer require flaircore/mpesa`
 
 [Mpesa Online Payment Example](https://github.com/flaircore/php-mpesa/wiki/Home:)
+
+
 **MAKING REQUESTS**
 
 
