@@ -46,7 +46,7 @@ class MpesaItem
     }
 
 
-    public function getBusinessShortCode(): ?string
+    public function getBusinessShortCode(): string
     {
         return $this->BusinessShortCode;
     }
@@ -62,12 +62,12 @@ class MpesaItem
      * class and the businessShortCode set in this class(MpesaItem)
      * i.e set explicitly and return
      */
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return base64_encode($this->getBusinessShortCode().$this->mpesaConfigs->getPassKey().$this->mpesaConfigs->getTimestamp());
     }
 
-    public function getTransactionType(): ?string
+    public function getTransactionType(): string
     {
         return $this->TransactionType;
     }
@@ -77,7 +77,7 @@ class MpesaItem
         $this->TransactionType = $TransactionType;
     }
 
-    public function getAmount(): ?string
+    public function getAmount(): string
     {
         return $this->Amount;
     }
@@ -87,7 +87,7 @@ class MpesaItem
         $this->Amount = $Amount;
     }
 
-    public function getPartyA(): ?string
+    public function getPartyA(): string
     {
         return $this->PartyA;
     }
@@ -97,7 +97,7 @@ class MpesaItem
         $this->PartyA = $PartyA;
     }
 
-    public function getPartyB(): ?string
+    public function getPartyB(): string
     {
         return $this->PartyB;
     }
@@ -107,7 +107,7 @@ class MpesaItem
         $this->PartyB = $PartyB;
     }
 
-    public function getPhoneNumber(): ?string
+    public function getPhoneNumber(): string
     {
         return $this->PhoneNumber;
     }
@@ -117,7 +117,7 @@ class MpesaItem
         $this->PhoneNumber = $PhoneNumber;
     }
 
-    public function getCallBackURL(): ?string
+    public function getCallBackURL(): string
     {
         return $this->CallBackURL;
     }

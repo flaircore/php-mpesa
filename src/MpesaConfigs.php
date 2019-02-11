@@ -20,7 +20,7 @@ class MpesaConfigs
 
     private $Timestamp;
 
-    public function getConsumerKey(): ?string
+    public function getConsumerKey(): string
     {
         return $this->consumerKey;
     }
@@ -31,7 +31,7 @@ class MpesaConfigs
     }
 
 
-    public function getConsumerSecret(): ?string
+    public function getConsumerSecret(): string
     {
         return $this->consumerSecret;
     }
@@ -41,7 +41,7 @@ class MpesaConfigs
         $this->consumerSecret = $consumerSecret;
     }
 
-    public function getEnviroment(): ?string
+    public function getEnviroment(): string
     {
         return $this->enviroment;
     }
@@ -51,7 +51,7 @@ class MpesaConfigs
         $this->enviroment = $enviroment;
     }
 
-    public function getPassKey(): ?string
+    public function getPassKey(): string
     {
         return $this->passKey;
     }

@@ -20,6 +20,9 @@ class stkPush
         $this->mpesaItem = $mpesaItem;
     }
 
+    /**
+     * @return mixed
+     */
     public function mpesaSTKPush()
     {
         # define the variales
@@ -33,25 +36,24 @@ class stkPush
         // generate the token
         $this->mpesaItem->setTransactionType('CustomerPayBillOnline');
         $headers = ['Content-Type:application/json; charset=utf8'];
-        $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
-        $curl = curl_init($access_token_url);
+        $curl = curl_init($this->getGenerateTokenUrl());
         curl_setopt($curl, CURLOPT_HEADER, $headers);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($curl, CURLOPT_HEADER, FALSE);
         curl_setopt($curl, CURLOPT_USERPWD, $this->mpesaConfigs->getConsumerKey().':'.$this->mpesaConfigs->getConsumerSecret());
+
         $result = curl_exec($curl);
         $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         $result = json_decode($result);
         $result->access_token;
 
-        $access_token = $result->access_token;
+        $access_token = $result->access_token; #temp access token
         curl_close($curl);
         // Initiating the transaction
         // define the valiables
-        $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
         $curl = curl_init();
         $stkHeader = ['Content-Type:application/json','Authorization:Bearer '.$access_token];
-        curl_setopt($curl, CURLOPT_URL, $initiate_url);
+        curl_setopt($curl, CURLOPT_URL, $this->getRequestInitiateUrl());
         curl_setopt($curl, CURLOPT_HTTPHEADER,$stkHeader); //setting custom header
         $curl_post_data = array(
             //Fill in the request parameters with valid values
@@ -73,6 +75,45 @@ class stkPush
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
         $curl_response = curl_exec($curl);
         return $curl_response;
+    }
+
+    /**
+     * returns the token generating url according to the envionment
+     * sandbox/live
+     */
+    private function getGenerateTokenUrl()
+    {
+        #$env = $this->mpesaConfigs->getEnviroment();
+        if ($this->mpesaConfigs->getEnviroment() == 'sandbox'){
+
+            $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+        }
+
+        if ($this->mpesaConfigs->getEnviroment() == 'live'){
+            $access_token_url = 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+        }
+
+        return $access_token_url;
+    }
+
+    /**
+     * returns the request Url according to the environment
+     * sandbox/live
+     */
+    private function getRequestInitiateUrl()
+    {
+        if ($this->mpesaConfigs->getEnviroment() == 'sandbox'){
+
+            $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+        }
+
+        if ($this->mpesaConfigs->getEnviroment() == 'live'){
+
+            $initiate_url = 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+        }
+
+        return $initiate_url;
+
     }
 
 }
