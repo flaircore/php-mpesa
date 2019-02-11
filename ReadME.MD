@@ -7,6 +7,7 @@ if you're using a cms or a framework that let's you save/update your configs fro
 Make sure you have composer installed, then in the root of your project directory run 
 `composer require flaircore/mpesa`
 
+[Mpesa Online Payment Example](https://github.com/flaircore/php-mpesa/wiki/Home:)
 **MAKING REQUESTS**
 
 
