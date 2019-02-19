@@ -67,6 +67,8 @@ class MpesaConfigs
      */
     public function getTimestamp()
     {
+        date_default_timezone_set('Africa/Dar_es_Salaam');
+
         return date('YmdGis');//20180920204512 y,M,D,Hour,MIN,SEC
     }
 

@@ -19,6 +19,8 @@ class stkPushResponse
      */
     public function stkPushResponseData()
     {
+        date_default_timezone_set('Africa/Dar_es_Salaam');
+
         $stkCallbackResponse = file_get_contents('php://input');
 
         return $stkCallbackResponse;

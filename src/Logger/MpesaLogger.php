@@ -20,6 +20,8 @@ class MpesaLogger
      */
     public function logResponse($logFileName, $infoToLog)
     {
+
+        date_default_timezone_set('Africa/Dar_es_Salaam');
         // Create the logger
         $logger = new Logger('mpesa_logger');
 
