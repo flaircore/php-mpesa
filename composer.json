@@ -14,7 +14,7 @@
         "php": ">=7.1.0",
         "ext-curl": "*",
         "ext-json": "*",
-        "monolog/monolog": "^1.0.0"
+        "monolog/monolog": "^2.0.0"
     },
 
     "autoload": {
