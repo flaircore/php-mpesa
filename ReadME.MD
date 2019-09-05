@@ -43,7 +43,7 @@ Make sure you have composer installed, then in the root of your project director
         $mpesaRequest->mpesaSTKPush();#send the request
         
 **PREREQUISITES**
-PHP 7.1 or above, also
+PHP 7.2 or above, also
 curl and json ext must be enabled.
 
 **Contributing**
