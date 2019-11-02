@@ -1,8 +1,7 @@
 
 **INTRODUCTION**
 
-Why/Because: hard to get a library that does this, and also lets you save your app credentials anyhow you want
-(in a database or on a .env file) atleast.
+Why/Because: lets you save and retrieve your app credentials from either a database or on a .env file.
 
 This library focuses on making it easier for php developers to integrate mpesa payment system into their app, especially
 if you're using a cms or a framework that let's you save/update your configs from the database. 
