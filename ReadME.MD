@@ -24,7 +24,7 @@ Make sure you have composer installed, then in the root of your project director
         $mpesaConfigs->setConsumerKey($consumerKey);
         $mpesaConfigs->setConsumerSecret($consumerSecret);
         $mpesaConfigs->setPassKey($passKey);
-        $mpesaConfigs->setEnviroment('sandbox'); #sandbox or live; TODO work on request urls
+        $mpesaConfigs->setEnviroment('sandbox'); #sandbox or live;
 
         $mpesaItem = new \Flaircore\Mpesa\MpesaItem($mpesaConfigs);
         $mpesaItem->setBusinessShortCode('Your Bs shortcode');
